@@ -1,0 +1,10 @@
+{
+	"cursorline": true,
+	"hlsearch": true,
+	"expandtab": false,
+	"noswapfile": true,
+	"number": false,
+	"relativenumber": true,
+	"modifiable": true,
+	"noshowmode": true
+}
