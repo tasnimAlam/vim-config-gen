@@ -1,10 +1,10 @@
 {
-	"cursorline": true,
-	"hlsearch": true,
+	"cursorline": false,
+	"hlsearch": false,
 	"expandtab": false,
-	"noswapfile": true,
+	"noswapfile": false,
 	"number": false,
-	"relativenumber": true,
-	"modifiable": true,
-	"noshowmode": true
+	"relativenumber": false,
+	"modifiable": false,
+	"noshowmode": false
 }
