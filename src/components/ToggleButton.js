@@ -1,6 +1,6 @@
 import React from "react";
 
-const ToggleButton = ({ label, checked, onClick }) => {
+const ToggleButton = ({ label, value, checked, onClick }) => {
 	return (
 		<label className="mt-3 inline-flex items-center cursor-pointer">
 			<span className="relative">
@@ -13,7 +13,7 @@ const ToggleButton = ({ label, checked, onClick }) => {
 					<input
 						type="checkbox"
 						className="absolute opacity-0 w-0 h-0"
-						name={label}
+						name={value}
 						value={checked}
 						onClick={onClick}
 					/>

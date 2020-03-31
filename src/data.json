@@ -1,10 +1,42 @@
 {
-	"cursorline": false,
-	"hlsearch": false,
-	"expandtab": false,
-	"noswapfile": false,
-	"number": false,
-	"relativenumber": false,
-	"modifiable": false,
-	"noshowmode": false
+	"cursorline": {
+		"type": "set",
+		"text": "Cursor Line",
+		"value": "true"
+	},
+	"hlsearch": {
+		"type": "set",
+		"text": "Highlight Search",
+		"value": "true"
+	},
+	"expandtab": {
+		"type": "set",
+		"text": "Use Tab",
+		"value": "true"
+	},
+	"noswapfile": {
+		"type": "set",
+		"text": "No Swap File",
+		"value": "true"
+	},
+	"number": {
+		"type": "set",
+		"text": "Show Line Number",
+		"value": "true"
+	},
+	"relativenumber": {
+		"type": "set",
+		"text": "Show Relative Number",
+		"value": "true"
+	},
+	"modifiable": {
+		"type": "set",
+		"text": "Modifiable ",
+		"value": "true"
+	},
+	"noshowmode": {
+		"type": "set",
+		"text": "Hide Bottom Message",
+		"value": "true"
+	}
 }

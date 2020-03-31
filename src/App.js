@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 
 import Controls from "./components/Controls";
-import Display from "./components/Display";
 import data from "./data.json";
+import Display from "./components/Display";
 
 function App() {
 	const [controls, setControls] = useState({});
@@ -13,7 +13,10 @@ function App() {
 
 	const onToggle = e => {
 		const { name, value } = e.target;
-		const updatedControls = { ...controls, [name]: !(value === "true") };
+		const updatedControls = {
+			...controls,
+			[name]: { ...controls[name], value: value === "true" ? "false" : "true" }
+		};
 
 		setControls(updatedControls);
 	};

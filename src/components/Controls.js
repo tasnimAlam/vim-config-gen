@@ -4,9 +4,16 @@ import ToggleButton from "./ToggleButton";
 const Controls = ({ controls, onToggle }) => {
 	return (
 		<div className="flex-1 bg-gray-100 ">
-			{Object.entries(controls).map(([key, value]) => (
+			{Object.entries(controls).map(([key, obj]) => (
 				<div key={key}>
-					<ToggleButton label={key} checked={value} onClick={onToggle} />
+					{obj.type === "set" && (
+						<ToggleButton
+							label={obj.text}
+							value={key}
+							checked={obj.value === "true"}
+							onClick={onToggle}
+						/>
+					)}
 				</div>
 			))}
 		</div>
