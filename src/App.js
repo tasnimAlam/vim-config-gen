@@ -15,7 +15,10 @@ function App() {
 		const { name, value } = e.target;
 		const updatedControls = {
 			...controls,
-			[name]: { ...controls[name], value: value === "true" ? "false" : "true" }
+			[name]: {
+				...controls[name],
+				checked: value === "true" ? "false" : "true"
+			}
 		};
 
 		setControls(updatedControls);

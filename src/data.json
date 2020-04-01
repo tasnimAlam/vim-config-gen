@@ -2,41 +2,90 @@
 	"cursorline": {
 		"type": "set",
 		"text": "Cursor Line",
-		"value": "true"
+		"checked": "true"
 	},
 	"hlsearch": {
 		"type": "set",
 		"text": "Highlight Search",
-		"value": "true"
+		"checked": "true"
 	},
 	"expandtab": {
 		"type": "set",
 		"text": "Use Tab",
-		"value": "true"
+		"checked": "true"
 	},
 	"noswapfile": {
 		"type": "set",
 		"text": "No Swap File",
-		"value": "true"
+		"checked": "true"
 	},
 	"number": {
 		"type": "set",
 		"text": "Show Line Number",
-		"value": "true"
+		"checked": "true"
 	},
 	"relativenumber": {
 		"type": "set",
 		"text": "Show Relative Number",
-		"value": "true"
+		"checked": "true"
 	},
 	"modifiable": {
 		"type": "set",
 		"text": "Modifiable ",
-		"value": "true"
+		"checked": "true"
 	},
 	"noshowmode": {
 		"type": "set",
 		"text": "Hide Bottom Message",
-		"value": "true"
+		"checked": "true"
+	},
+	"tabstop": {
+		"type": "set",
+		"text": "Tab Space",
+		"checked": "true",
+		"value": "2"
+	},
+	"shiftwidth": {
+		"type": "set",
+		"text": "Shift Space",
+		"checked": "true",
+		"value": "2"
+	},
+	"laststatus": {
+		"type": "set",
+		"text": "Last Status",
+		"checked": "true",
+		"value": "2"
+	},
+	"encoding": {
+		"type": "set",
+		"text": "Encoding",
+		"checked": "true",
+		"value": "utf-8"
+	},
+	"clipboard": {
+		"type": "set",
+		"text": "Encoding",
+		"checked": "true",
+		"value": "utf-8"
+	},
+	"clipboard": {
+		"type": "set",
+		"text": "Clipboard",
+		"checked": "true",
+		"value": "unnamedplus"
+	},
+	"completeopt": {
+		"type": "set",
+		"text": "Complete option",
+		"checked": "true",
+		"value": "noinsert"
+	},
+	"regexpengine": {
+		"type": "set",
+		"text": "Regexp Engine",
+		"checked": "true",
+		"value": "1",
+		"options": ["0", "1", "2"]
 	}
 }
