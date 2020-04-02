@@ -24,9 +24,21 @@ function App() {
 		setControls(updatedControls);
 	};
 
+	const onNumberChange = (e, name) => {
+		const updatedControls = {
+			...controls,
+			[name]: { ...controls[name], value: e.target.value || 0 }
+		};
+		setControls(updatedControls);
+	};
+
 	return (
 		<div className="flex">
-			<Controls controls={controls} onToggle={onToggle} />
+			<Controls
+				controls={controls}
+				onToggle={onToggle}
+				onNumberChange={onNumberChange}
+			/>
 			<Display controls={controls} />
 		</div>
 	);
