@@ -32,12 +32,23 @@ function App() {
 		setControls(updatedControls);
 	};
 
+	const onSelect = e => {
+		const { name, value } = e.target;
+		const updatedControls = {
+			...controls,
+			[name]: { ...controls[name], value: value }
+		};
+
+		setControls(updatedControls);
+	};
+
 	return (
 		<div className="flex">
 			<Controls
 				controls={controls}
 				onToggle={onToggle}
 				onNumberChange={onNumberChange}
+				onSelect={onSelect}
 			/>
 			<Display controls={controls} />
 		</div>

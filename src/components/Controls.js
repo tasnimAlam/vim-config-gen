@@ -1,8 +1,9 @@
 import React from "react";
 import ToggleButton from "./ToggleButton";
 import NumberInput from "./NumberInput";
+import SelectControls from "./SelectControls";
 
-const Controls = ({ controls, onToggle, onNumberChange }) => {
+const Controls = ({ controls, onToggle, onNumberChange, onSelect }) => {
 	return (
 		<div className="flex-1 bg-gray-100 ">
 			{Object.entries(controls).map(([key, obj]) => (
@@ -15,11 +16,22 @@ const Controls = ({ controls, onToggle, onNumberChange }) => {
 							onClick={onToggle}
 						/>
 					)}
-					{obj.hasOwnProperty("value") && !isNaN(parseInt(obj.value)) && (
-						<NumberInput
+					{obj.hasOwnProperty("value") &&
+						!obj.hasOwnProperty("options") &&
+						!isNaN(parseInt(obj.value)) && (
+							<NumberInput
+								name={key}
+								settings={obj}
+								onNumberChange={onNumberChange}
+							/>
+						)}
+
+					{obj.hasOwnProperty("options") && (
+						<SelectControls
 							name={key}
-							settings={obj}
-							onNumberChange={onNumberChange}
+							value={obj.value}
+							onSelect={onSelect}
+							options={obj.options}
 						/>
 					)}
 				</div>
