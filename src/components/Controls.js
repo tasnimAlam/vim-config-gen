@@ -27,12 +27,7 @@ const Controls = ({ controls, onToggle, onNumberChange, onSelect }) => {
 						)}
 
 					{obj.hasOwnProperty("options") && (
-						<SelectControls
-							name={key}
-							value={obj.value}
-							onSelect={onSelect}
-							options={obj.options}
-						/>
+						<SelectControls name={key} settings={obj} onSelect={onSelect} />
 					)}
 				</div>
 			))}

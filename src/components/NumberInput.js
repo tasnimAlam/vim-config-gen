@@ -5,7 +5,9 @@ const NumberInput = ({ name, settings, onNumberChange }) => (
 		<input
 			type="number"
 			placeholder={settings.value}
-			className="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full"
+			className={`px-2 py-1 placeholder-gray-400 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full ${
+				settings.checked === "true" ? "text-gray-700" : "text-gray-400"
+			}`}
 			min={0}
 			value={parseInt(settings.value)}
 			name={name}
