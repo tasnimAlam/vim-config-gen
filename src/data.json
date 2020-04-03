@@ -55,15 +55,10 @@
 		"type": "set",
 		"text": "Last Status",
 		"checked": "true",
-		"value": "2"
+		"value": "2",
+		"options": ["0", "1", "2"]
 	},
 	"encoding": {
-		"type": "set",
-		"text": "Encoding",
-		"checked": "true",
-		"value": "utf-8"
-	},
-	"clipboard": {
 		"type": "set",
 		"text": "Encoding",
 		"checked": "true",

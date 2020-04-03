@@ -43,22 +43,23 @@ const Display = ({ controls }) => {
 	const displayRef = useRef(null);
 
 	return (
-		<div className="flex-1 bg-white border-t-2 m-3 p-3 shadow-lg text-gray-700">
+		<div className="flex-1">
 			<div className="clearfix">
 				<CopyToClipboard text={copyText}>
 					<Button text="Copy" onClick={onCopy} />
 				</CopyToClipboard>
 				<Button text="Download" onClick={onDownload} />
 			</div>
+			<div className="flex-1 bg-white border-t-2 m-3 p-3 shadow-lg text-gray-700">
+				<div className="flex-1" ref={displayRef}>
+					{Object.entries(controls).map(([key, obj]) => {
+						const { type, checked, value } = obj;
 
-			<div className="flex-1" ref={displayRef}>
-				{Object.entries(controls).map(([key, obj]) => {
-					const { type, checked, value } = obj;
-
-					if (checked === "true") {
-						if (type === "set") return setKeys(key, value);
-					}
-				})}
+						if (checked === "true") {
+							if (type === "set") return setKeys(key, value);
+						}
+					})}
+				</div>
 			</div>
 		</div>
 	);
