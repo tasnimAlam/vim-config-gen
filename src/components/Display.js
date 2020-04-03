@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
-import CopyButton from "./CopyButton";
+import Button from "./Button";
 
 const Display = ({ controls }) => {
 	const [copyText, setCopyText] = useState("");
@@ -17,20 +17,39 @@ const Display = ({ controls }) => {
 		);
 	};
 
-	const onCopy = () => {
+	const getContent = () => {
 		let text = displayRef.current.innerHTML.split("</p><p>").join("\n");
-		text = text.substring(3, text.length - 4);
+		return (text = text.substring(3, text.length - 4));
+	};
 
+	const onCopy = () => {
+		let text = getContent();
 		setCopyText(text);
+	};
+
+	const onDownload = () => {
+		let text = getContent();
+
+		if (text) {
+			let link = document.createElement("a");
+			let content = "data:text/plain;charset=utf-8," + encodeURIComponent(text);
+			link.setAttribute("href", content);
+
+			link.setAttribute("download", ".vimrc");
+			link.click();
+		}
 	};
 
 	const displayRef = useRef(null);
 
 	return (
 		<div className="flex-1 bg-white border-t-2 m-3 p-3 shadow-lg text-gray-700">
-			<CopyToClipboard text={copyText}>
-				<CopyButton onClick={onCopy} />
-			</CopyToClipboard>
+			<div className="clearfix">
+				<CopyToClipboard text={copyText}>
+					<Button text="Copy" onClick={onCopy} />
+				</CopyToClipboard>
+				<Button text="Download" onClick={onDownload} />
+			</div>
 
 			<div className="flex-1" ref={displayRef}>
 				{Object.entries(controls).map(([key, obj]) => {
