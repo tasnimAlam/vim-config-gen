@@ -5,7 +5,7 @@ import SelectControls from "./SelectControls";
 
 const Controls = ({ controls, onToggle, onNumberChange, onSelect }) => {
 	return (
-		<div className="flex-1 bg-gray-100 ">
+		<div className="flex-1 bg-white shadow-lg border-t-2 m-3 p-3">
 			{Object.entries(controls).map(([key, obj]) => (
 				<div key={key} className="flex">
 					{obj.type === "set" && (

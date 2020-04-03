@@ -27,12 +27,12 @@ const Display = ({ controls }) => {
 	const displayRef = useRef(null);
 
 	return (
-		<div className="flex-1 bg-gray-500">
+		<div className="flex-1 bg-white border-t-2 m-3 p-3 shadow-lg text-gray-700">
 			<CopyToClipboard text={copyText}>
 				<CopyButton onClick={onCopy} />
 			</CopyToClipboard>
 
-			<div className="flex-1 bg-gray-500" ref={displayRef}>
+			<div className="flex-1" ref={displayRef}>
 				{Object.entries(controls).map(([key, obj]) => {
 					const { type, checked, value } = obj;
 
