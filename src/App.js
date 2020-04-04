@@ -42,6 +42,16 @@ function App() {
 		setControls(updatedControls);
 	};
 
+	const onCustomConfigChange = e => {
+		const { name, value } = e.target;
+		const updatedControls = {
+			...controls,
+			[name]: { ...controls[name], value }
+		};
+
+		setControls(updatedControls);
+	};
+
 	return (
 		<div className="flex">
 			<Controls
@@ -49,6 +59,7 @@ function App() {
 				onToggle={onToggle}
 				onNumberChange={onNumberChange}
 				onSelect={onSelect}
+				onCustomConfigChange={onCustomConfigChange}
 			/>
 			<Display controls={controls} />
 		</div>

@@ -17,6 +17,14 @@ const Display = ({ controls }) => {
 		);
 	};
 
+	const customConfig = (key, value) => {
+		return (
+			<p key={key} className="mt-2 mb-2">
+				{value}
+			</p>
+		);
+	};
+
 	const getContent = () => {
 		let text = displayRef.current.innerHTML.split("</p><p>").join("\n");
 		return (text = text.substring(3, text.length - 4));
@@ -50,6 +58,7 @@ const Display = ({ controls }) => {
 				</CopyToClipboard>
 				<Button text="Download" onClick={onDownload} />
 			</div>
+
 			<div className="flex-1 bg-white border-t-2 m-3 p-3 shadow-lg text-gray-700">
 				<div className="flex-1" ref={displayRef}>
 					{Object.entries(controls).map(([key, obj]) => {
@@ -57,6 +66,7 @@ const Display = ({ controls }) => {
 
 						if (checked === "true") {
 							if (type === "set") return setKeys(key, value);
+							if (type === "custom") return customConfig(key, value);
 						}
 					})}
 				</div>
