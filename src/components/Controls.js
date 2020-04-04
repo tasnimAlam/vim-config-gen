@@ -14,7 +14,7 @@ const Controls = ({
 	return (
 		<div className="flex-1 bg-white shadow-lg border-t-2 m-3 p-3">
 			{Object.entries(controls).map(([key, obj]) => (
-				<>
+				<span key={key}>
 					<div key={key} className="flex">
 						{(obj.type === "set" ||
 							obj.type === "let" ||
@@ -48,7 +48,7 @@ const Controls = ({
 							onChange={onCustomConfigChange}
 						/>
 					)}
-				</>
+				</span>
 			))}
 		</div>
 	);

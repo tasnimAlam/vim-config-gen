@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { Fragment, useState, useRef } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
 import Button from "./Button";
@@ -14,6 +14,22 @@ const Display = ({ controls }) => {
 			<pre key={key}>
 				set {key}={value}
 			</pre>
+		);
+	};
+
+	const letKeys = (key, obj) => {
+		let value = obj.value === "<Space>" ? " " : obj.value;
+
+		value =
+			obj.hasOwnProperty("quote") && obj.quote === "true" && '"' + value + '"';
+
+		return (
+			<Fragment key={key}>
+				<pre>
+					let {key} = {value}
+				</pre>
+				{obj.value !== "\\" && <pre>noremap {obj.value} \</pre>}
+			</Fragment>
 		);
 	};
 
@@ -55,13 +71,14 @@ const Display = ({ controls }) => {
 				<Button text="Download" onClick={onDownload} />
 			</div>
 
-			<div className="flex-1 bg-white border-t-2 m-3 p-3 shadow-lg text-gray-700">
+			<div className="max-w-lg overflow-scroll flex-1 bg-white border-t-2 m-3 p-3 shadow-lg text-gray-700">
 				<div className="flex-1" ref={displayRef}>
 					{Object.entries(controls).map(([key, obj]) => {
 						const { type, checked, value } = obj;
 
 						if (checked === "true") {
 							if (type === "set") return setKeys(key, value);
+							if (type === "let") return letKeys(key, obj);
 							if (type === "custom") return customConfig(key, value);
 						}
 					})}

@@ -87,7 +87,9 @@
 		"type": "let",
 		"text": "Leader key",
 		"checked": "false",
-		"key_code": "92"
+		"value": "\\",
+		"options": [" <Space>", ",", "\\", ";"],
+		"quote": "true"
 	},
 	"customconfig": {
 		"type": "custom",
