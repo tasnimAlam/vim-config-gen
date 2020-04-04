@@ -8,26 +8,22 @@ const Display = ({ controls }) => {
 
 	const setKeys = (key, value) => {
 		if (typeof value === "undefined") {
-			return <p key={key}>set {key} </p>;
+			return <pre key={key}>set {key} </pre>;
 		}
 		return (
-			<p key={key}>
+			<pre key={key}>
 				set {key}={value}
-			</p>
+			</pre>
 		);
 	};
 
 	const customConfig = (key, value) => {
-		return (
-			<p key={key} className="mt-2 mb-2">
-				{value}
-			</p>
-		);
+		return <pre key={key}>{value}</pre>;
 	};
 
 	const getContent = () => {
-		let text = displayRef.current.innerHTML.split("</p><p>").join("\n");
-		return (text = text.substring(3, text.length - 4));
+		let text = displayRef.current.innerHTML.split("</pre><pre>").join("\n");
+		return (text = text.substring(5, text.length - 6));
 	};
 
 	const onCopy = () => {
