@@ -3,10 +3,10 @@
 	"version": "0.1.0",
 	"private": true,
 	"dependencies": {
-		"react": "^16.8.6",
+		"react": "^17.0.1",
 		"react-copy-to-clipboard": "^5.0.2",
-		"react-dom": "^16.8.6",
-		"react-scripts": "3.0.1"
+		"react-dom": "^17.0.1",
+		"react-scripts": "4.0.3"
 	},
 	"scripts": {
 		"start": "react-scripts start",
@@ -33,9 +33,9 @@
 		]
 	},
 	"devDependencies": {
-		"@fullhuman/postcss-purgecss": "^2.1.0",
-		"autoprefixer": "^9.7.5",
-		"postcss-cli": "^7.1.0",
-		"tailwindcss": "^1.2.0"
+		"@fullhuman/postcss-purgecss": "^4.0.2",
+		"autoprefixer": "^10.2.5",
+		"postcss-cli": "^8.3.1",
+		"tailwindcss": "^2.0.3"
 	}
 }
