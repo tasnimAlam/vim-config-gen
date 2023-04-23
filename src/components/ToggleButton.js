@@ -6,9 +6,8 @@ const ToggleButton = ({ label, value, checked, onClick }) => {
 			<span className="relative">
 				<span className="block w-10 h-6 bg-gray-400 rounded-full shadow-inner" />
 				<span
-					className={`absolute block w-4 h-4 mt-1 ml-1 rounded-full shadow inset-y-0 left-0 focus-within:shadow-outline transition-transform duration-300 ease-in-out ${
-						checked ? "bg-purple-600 transform translate-x-full" : "bg-white"
-					}`}
+					className={`absolute block w-4 h-4 mt-1 ml-1 rounded-full shadow inset-y-0 left-0 focus-within:shadow-outline transition-transform duration-300 ease-in-out ${checked ? "bg-purple-600 transform translate-x-full" : "bg-white"
+						}`}
 				>
 					<input
 						type="checkbox"
